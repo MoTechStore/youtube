@@ -1,0 +1,29 @@
+1. Update your machine
+# sudo apt update
+
+2. Install mysql
+# apt install mariadb-server mariadb-client
+=> Test mysql, if it requires password, start it in safe mode
+# sudo service mysql stop
+# sudo mysqld_safe --skip-grant-tables --skip-syslog --skip-networking
+
+
+3. Install PHP
+# apt install php php-mysql
+
+
+4. Create DB user
+# CREATE USER 'foobar'@'localhost' IDENTIFIED BY 'foobar';
+# GRANT ALL PRIVILEGES ON *.* TO 'foobar';
+# flush privileges;
+
+
+5. Install PHPMyadmin 
+# sudo apt install phpmyadmin
+
+
+6. Specify PHPMyadmin in Apache configuration file
+Alias /adminer /usr/share/phpmyadmin
+
+7. Restart Apache
+# systemctl restart apache2
