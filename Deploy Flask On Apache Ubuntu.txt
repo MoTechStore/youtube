@@ -1,5 +1,8 @@
 1. Install Apache
 # apt install apache2 
+# sudo apt-get install libapache2-mod-wsgi-py3
+# sudo a2enmod wsgi
+# sudo service apache2 restart
 
 2. Create a project folder and change directory
 # mkdir /var/www/flask-app 
@@ -15,6 +18,7 @@
 
 
 5. Create app.py file and put source code below
+# nano app.py
 ===== begin source code ======
 from flask import Flask
 app = Flask(__name__)
@@ -70,3 +74,4 @@ from app import app as application
         CustomLog ${APACHE_LOG_DIR}/flas-kapp-access.log combined
 </VirtualHost>
 
+# systemctl restart apache2
